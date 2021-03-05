@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 
 // Password: QZAesJtZdQQyAJX
 
 export default function Login() {
+
+    const history = useHistory();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -29,9 +32,9 @@ export default function Login() {
             if(!response.status===200) {
                 setLoginStatus(false);
             } else {
-                localStorage.setItem('token', response.data);
+                localStorage.setItem('token', response.data[0]);
                 setLoginStatus(true);
-
+                history.push('/account');
             }
             console.log(loginStatus);
         }
@@ -48,7 +51,7 @@ export default function Login() {
                     setUsername(e.target.value);
                 }} 
                 required
-            />
+            /><br></br>
             <input 
                 type='password' 
                 placeholder='password'
@@ -56,7 +59,7 @@ export default function Login() {
                     setPassword(e.target.value);
                 }} 
                 required
-            />
+            /><br></br>
             <button onClick={login}>Login</button>
         </div>
     )
