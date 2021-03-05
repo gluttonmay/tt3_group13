@@ -22,34 +22,8 @@
   color: black;
 }
 
-form {
-  border: 3px solid #f1f1f1;
-}
 
-/* input fields */
-input{
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  width: 70%;
-}
 
-/* save button */
-button {
-  background-color: #FF3333;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
 .App-link {
   color: #61dafb;
 }
