@@ -24,7 +24,7 @@ function TransactionHistory(props)
     }, []);
 
     return(
-        <div>
+        <div className='container'>
             <h1>TransactionHistory</h1>
             {transactions.map((transaction) => {
                 return (
