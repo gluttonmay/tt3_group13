@@ -10,5 +10,6 @@ export default class ProtectedRoute extends React.Component {
             <Component />
         ) : (
             <Redirect to={{ pathname: "/"}} />
+        )
     }
 }
