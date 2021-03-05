@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 //import {BrowserRouter, Route, useHistory, useLocation} from "react-router-dom";
 import axios from "axios";
+import '../Account.css';
 
 import BalanceChart from "./BalanceChart";
 
@@ -66,19 +67,20 @@ function UserInfo(props)
     }
 
     return(
-        <div style = {{float: "left"}}>
+        <div className>
+            
             <button type = "button" onClick = {handleBalanceClick}>Balance</button>
             <button type = "button" onClick = {handleMarketClick}>Market</button>
             <button type = "button" onClick = {handleHistory}>History</button>
             <button type = "button" onClick = {handleLogout}>Logout</button>
-            
-            <h1>{firstName}</h1>
-            <h1>{lastName}</h1>
-            <h1>{nric}</h1>
-            <h1>{address}</h1>
-            <h1>{phoneNumber}</h1>
-            <h1>{email}</h1>
-            {accountKey && <BalanceChart key = {accountKey} />}
+            <h1>User Information</h1>
+            {firstName}
+            {lastName}
+            {nric}
+            {address}
+            {phoneNumber}
+            {email}
+            {accountKey && <BalanceChart acckey = {accountKey} />}
         </div>
     );
 }
