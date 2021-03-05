@@ -1,12 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
+import WalletBalance from "./components/WalletBalance"
+import Header from "./components/Header"
 import UserInfo from "./components/UserInfo";
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <UserInfo />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <WalletBalance />
+    
+      </div>
+    </Router>
   );
 }
 
