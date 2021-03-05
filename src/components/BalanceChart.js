@@ -26,16 +26,16 @@ function BalanceChart(props)
                 var data0 = [
                     {
                       name: "Asset Balance",
-                      amt: 2400,
+                      amount: 2400,
                     },
                     {
                       name: "Cash Balance",
-                      amt: 2210,
+                      amount: 2210,
                     }
                 ];
 
-                data0[0].amt = response.data.assetBalance;
-                data0[1].amt = response.data.cashBalance;
+                data0[0].amount = response.data.assetBalance;
+                data0[1].amount = response.data.cashBalance;
 
                 setData(data0);
             }
@@ -65,7 +65,7 @@ function BalanceChart(props)
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey = "amt" fill = "#8884d8"/>
+              <Bar dataKey = "amount" fill = "#8884d8"/>
             </BarChart>}
         </div>
     );
