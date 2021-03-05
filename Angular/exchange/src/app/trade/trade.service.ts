@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { WalletBalance } from './wallet-balance.model';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
+import {retry, switchMap} from 'rxjs/operators'
 import { TechTrek } from './tech-trek.model';
 
 @Injectable({
@@ -21,11 +22,14 @@ export class TradeService {
 
   getWalletBalance() {
      
-     return this.http.post<WalletBalance>(this.walletBalanceURL, {"accountKey" : this.accountKey}, {headers: {"x-api-key": this.apiKey}});
+     return  this.http.post<WalletBalance>(this.walletBalanceURL, {"accountKey" : this.accountKey}, {headers: {"x-api-key": this.apiKey}});
   }
 
   getAssetPrice() {
-    return this.http.post<TechTrek>(this.currentAssetPriceURL,  {"accountKey" : this.accountKey}, {headers: {"x-api-key": this.apiKey}});
+    return timer(1, 100).pipe(switchMap(() => 
+    this.http.post<TechTrek>(this.currentAssetPriceURL,  {"accountKey" : this.accountKey}, {headers: {"x-api-key": this.apiKey}})
+    ), retry());
+    
   }
 
 }
