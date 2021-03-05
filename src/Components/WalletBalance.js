@@ -8,33 +8,40 @@ export default function WalletBalance() {
 
     const fetchbal = () => {
         axios.post("https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/balance", {
-            assetBalance: assetBalance,
-            cashBalance: cashBalance
+            accountKey: "cc9fd35f-3d59-4700-8d78-ad5405c767ad"
         }, 
-        {headers: QNd2HPwfhv2bK2pNt4pfl79YaNoq7p0X7XeSPkKY})
+        {headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+            "x-api-key": "QNd2HPwfhv2bK2pNt4pfl79YaNoq7p0X7XeSPkKY"}})
         .then((response) => {
-            console.log(response.data[0])
-            setAssetBalance(response.data[0].assetBalance)
-            setCashBalance(response.data[0].cashBalance)
+            console.log(response.data)
+            setAssetBalance(response.data.assetBalance)
+            setCashBalance(response.data.cashBalance)
         }).catch((error) => {
-            windows.alert(error)
+            window.alert(error)
         })
     }
+
+    useEffect(() => {
+        fetchbal()
+    })
 
     return (
         <div>
             <div>
-                <img src= "https://static.thenounproject.com/png/3201525-200.png"/>
+                <img src= "https://static.thenounproject.com/png/3201525-200.png" alt="Avatar"/>
             </div>
 
             <div>
                 <h2>Available Balance</h2>
                 <div>
-                    Asset Balance: 
+                    Asset Balance: $ {assetBalance}
                 </div>
                 <div>
-                    Cash Balance: $
+                    Cash Balance: $ {cashBalance}
                 </div>
+
             </div>
             
         </div>
