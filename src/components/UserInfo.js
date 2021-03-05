@@ -2,8 +2,11 @@ import React, {useState, useEffect} from "react";
 //import {BrowserRouter, Route, useHistory, useLocation} from "react-router-dom";
 import axios from "axios";
 
+import BalanceChart from "./BalanceChart";
+
 function UserInfo(props)
 {
+    const [accountKey, setAccountKey] = useState("");
     const [firstName, setFirstName] = useState("first");
     const [lastName, setLastName] = useState("last");
     const [nric, setNric] = useState("S1234567C");
@@ -23,6 +26,7 @@ function UserInfo(props)
             console.log(response);
             if (response.status === 200)
             {
+                setAccountKey(response.data.accountKey);
                 setAddress(response.data.address);
                 setEmail(response.data.email);
                 setFirstName(response.data.firstName);
@@ -67,13 +71,14 @@ function UserInfo(props)
             <button type = "button" onClick = {handleMarketClick}>Market</button>
             <button type = "button" onClick = {handleHistory}>History</button>
             <button type = "button" onClick = {handleLogout}>Logout</button>
-
+            
             <h1>{firstName}</h1>
             <h1>{lastName}</h1>
             <h1>{nric}</h1>
             <h1>{address}</h1>
             <h1>{phoneNumber}</h1>
             <h1>{email}</h1>
+            {accountKey && <BalanceChart key = {accountKey} />}
         </div>
     );
 }
