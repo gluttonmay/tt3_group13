@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Route path='/history' component={TransactionHistory} />
+        <Route path='/history' exact component={TransactionHistory} />
       </div>
     </Router>
   );

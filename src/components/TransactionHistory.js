@@ -17,7 +17,9 @@ function TransactionHistory(props)
             console.log(response);
             console.log(response.data);
             setTransactions(response.data);
-          });
+          }).catch((error) => {
+            window.alert(error)
+        })
 
     }, []);
 
