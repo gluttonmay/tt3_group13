@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+/* for header */
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #black;
+}
+
+p {
+  text-indent: 50px;
+  letter-spacing: 3px;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
