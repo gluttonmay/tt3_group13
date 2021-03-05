@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
+import jwt_decode from "jwt-decode"
 
 export default function WalletBalance() {
 
@@ -7,9 +8,6 @@ export default function WalletBalance() {
     const[cashBalance, setCashBalance] = useState("")
 
     var postData = {accountKey: "cc9fd35f-3d59-4700-8d78-ad5405c767ad"}
-    var user= localStorage.getItem(postData)
-    var decoded = jwt_decode(user)
-    console.log(decoded) 
 
     const fetchbal = () => {
         axios.post("https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/balance", 
