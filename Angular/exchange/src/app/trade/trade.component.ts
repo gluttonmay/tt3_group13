@@ -15,7 +15,7 @@ import { WalletBalance } from './wallet-balance.model';
 })
 export class TradeComponent implements OnInit {
   walletService;
-
+  
 
   @ViewChild('f', { static: false }) tradeForm: NgForm;
   tradeMode = true;
