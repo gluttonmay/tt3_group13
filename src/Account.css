@@ -12,14 +12,12 @@
   /* display bolded text */
   a {
     font-weight: bold;
-    letter-spacing: 3px;
   }
   
   
   /* display regular text */
   p {
     font-weight: normal;
-    letter-spacing: 3px;
   }
   
   

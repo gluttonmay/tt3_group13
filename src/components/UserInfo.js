@@ -68,10 +68,10 @@ function UserInfo(props)
 
     return(
         <div>
-            <button type = "button" onClick = {handleBalanceClick}>Balance</button>
+            {/*<button type = "button" onClick = {handleBalanceClick}>Balance</button>
             <button type = "button" onClick = {handleMarketClick}>Market</button>
             <button type = "button" onClick = {handleHistory}>History</button>
-            <button type = "button" onClick = {handleLogout}>Logout</button>
+            <button type = "button" onClick = {handleLogout}>Logout</button>*/}
             <h1>User Information</h1>
             <a>First Name:</a><p>{firstName}</p>
             <a>Last Name:</a>
