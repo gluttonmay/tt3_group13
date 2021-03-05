@@ -26,12 +26,7 @@ function App() {
       {/* Specifies components to handle specific routes */}
       <Router>
         <div>
-          {/* This line specifies that if the browser URL matches /,
-          the ArticleListing component should be rendered in this place. */}
-          <Route exact path='/' component={ArticleListing} />
-          {/* Paths can contain parameters, for example, path="/post/:slug",
-          which are delivered to the target component through react props. */}
-          <Route path='/post/:slug' component={ArticleView} />
+          
         </div>
       </Router>
     </div>
