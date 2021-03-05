@@ -1,0 +1,21 @@
+.balancetable {
+    background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	margin: 20px;
+	overflow: hidden;
+    height: 110px;
+	width: 510px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.balanceavatar {
+    background-color: #FF3333;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+	background-color:#FF3333;
+    border-radius: 10px 0 0 10px;
+}
