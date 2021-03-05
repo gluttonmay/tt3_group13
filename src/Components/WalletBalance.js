@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import "./WalletBalance.css"
-//import { ​IoPersonCircle }​ from "react-icons/io5";
 
 export default function WalletBalance() {
 
