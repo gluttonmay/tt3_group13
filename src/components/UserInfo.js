@@ -67,19 +67,18 @@ function UserInfo(props)
     }
 
     return(
-        <div className>
-            
+        <div>
             <button type = "button" onClick = {handleBalanceClick}>Balance</button>
             <button type = "button" onClick = {handleMarketClick}>Market</button>
             <button type = "button" onClick = {handleHistory}>History</button>
             <button type = "button" onClick = {handleLogout}>Logout</button>
             <h1>User Information</h1>
-            {firstName}
-            {lastName}
-            {nric}
-            {address}
-            {phoneNumber}
-            {email}
+            <h2>{firstName}</h2>
+            <h2>{lastName}</h2>
+            <h2>{nric}</h2>
+            <h2>{address}</h2>
+            <h2>{phoneNumber}</h2>
+            <h2>{email}</h2>
             {accountKey && <BalanceChart acckey = {accountKey} />}
         </div>
     );
