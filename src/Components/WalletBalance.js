@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
-import "Wa"
+import "./WalletBalance.css"
 
 export default function WalletBalance() {
 
@@ -33,10 +33,10 @@ export default function WalletBalance() {
     return (
         <div className="balancetable">
             <div className="balanceavatar">
-                <img src= "https://static.thenounproject.com/png/3201525-200.png" alt="Avatar"/>
+                <img src= "https://static.thenounproject.com/png/3201525-200.png" alt="Avatar" className="avatar"/>
             </div>
 
-            <div>
+            <div className="balanceinfo">
                 <h2>Available Balance</h2>
                 <div>
                     Asset Balance: $ {assetBalance}
