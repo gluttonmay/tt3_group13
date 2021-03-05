@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: black;
+}
+
+.input-fields {
+    text-align: center;  
+}
+
+button {
+    background-color: #FF3333;
+    color: black;
+    padding: 14px 20px;
+    border-radius: 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+  }
+
+input {
+    height: 50px;
+    width: 60%;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.div1 {
+    height: 790px;
+    width: 100%;
+}
+
+.div2 {
+    border: 10px solid silver;
+    background-color: silver;
+    background-blend-mode: color;
+    opacity: 0.9;
+    box-shadow: gray;
+    align-content: center;
+    width: 40%;
+    height: 400px;
+    margin: 0;
+    position: relative;
+    transform: translate(70%, 50%);
+}

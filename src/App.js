@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import UserInfo from "./components/UserInfo";
 
@@ -7,6 +6,7 @@ function App() {
     <div className="App">
       <UserInfo />
     </div>
+    </Router>
   );
 }
 
