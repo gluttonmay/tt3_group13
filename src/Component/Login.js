@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
@@ -7,13 +7,16 @@ import { useHistory } from 'react-router';
 
 export default function Login() {
 
+    // write this to use history.push later on
     const history = useHistory();
 
+    // get inputs from the input fields to send to API for validation
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const [loginStatus, setLoginStatus] = useState(false);
 
+    // setting data for post method
     var postData = {
         'username': username,
         'password': password,
@@ -25,6 +28,7 @@ export default function Login() {
         }
     };
 
+    // login function to validate login and store token
     const login = () => {
         axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/login', postData, axiosConfig)
         .then((response) => {
@@ -32,15 +36,21 @@ export default function Login() {
             if(!response.status===200) {
                 setLoginStatus(false);
             } else {
-                localStorage.setItem('token', response.data[0]);
+                localStorage.setItem('token', response.data);
                 setLoginStatus(true);
                 history.push('/account');
             }
             console.log(loginStatus);
-        }
-    );
-};
+        });
+    };
 
+    // persistant login
+    useEffect(() => {
+    if(localStorage.getItem('token'))
+    {
+        history.push('/account')
+    }    
+    }, [])
 
     return (
         <div>
