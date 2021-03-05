@@ -1,4 +1,4 @@
 export class WalletBalance {
-    assetBalance: Number;
-    cashBalance: Number;
+    assetBalance: number;
+    cashBalance: number;
 }

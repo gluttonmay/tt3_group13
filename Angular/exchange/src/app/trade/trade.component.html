@@ -1,3 +1,29 @@
 <p>trade works!</p>
-<h1> Cash Balance Here {{walletBalance.cashBalance}}</h1>
+<h1> Cash Balance: {{walletBalance.cashBalance}}</h1>
+<h1> Asset Balance: {{walletBalance.assetBalance}}</h1>
 <h1><span [innerText]="techTrek.assetSymbol"></span>  Current Price:  {{techTrek.price}}</h1>
+
+<button type="button" (click)="onTradeEnable()">{{tradeMode ? 'Close Trade' : 'Open Trade'}}</button>
+<br>
+<hr>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" *ngIf="tradeMode">
+    <label for="orderType">Order Type: </label>
+    <select class="form-control" id="orderType" name="orderType" required ngModel>
+        <option *ngFor="let type of orderTypes" [value]="type">{{type}}</option>
+    </select>
+    <br><br>
+    <label for="amount">Amount: </label>
+    <input (keyup)="onKey($event)" type="number" id="assetAmount" class="form-control" name="assetAmount" ngModel required  pattern="^[1-9]+[0-9]*$">
+
+    <p>Number of Assets: {{enteredAmount}}</p>
+    <p>Total Cost of Order : {{orderCost}}</p>
+    <p>Wallet Balance After Order: {{afterWalletBalance}}</p>
+
+    <button type="submit" [disabled]="!f.valid">Submit Order</button>
+</form>
+<div *ngIf="executedOrder">
+    <p>Order Executed!</p>
+    <p *ngFor="let property of orderResponse | keyvalue">{{property.key}}:{{property.value}}</p>
+</div>
+
+
