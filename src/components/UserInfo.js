@@ -73,12 +73,17 @@ function UserInfo(props)
             <button type = "button" onClick = {handleHistory}>History</button>
             <button type = "button" onClick = {handleLogout}>Logout</button>
             <h1>User Information</h1>
-            <h2>{firstName}</h2>
-            <h2>{lastName}</h2>
-            <h2>{nric}</h2>
-            <h2>{address}</h2>
-            <h2>{phoneNumber}</h2>
-            <h2>{email}</h2>
+            <a>First Name:</a><p>{firstName}</p>
+            <a>Last Name:</a>
+            <p>{lastName}</p>
+            <a>NRIC:</a>
+            <p>{nric}</p>
+            <a>Address:</a>
+            <p>{address}</p>
+            <a>Phone Number:</a>
+            <p>{phoneNumber}</p>
+            <a>E-mail:</a>
+            <p>{email}</p>
             {accountKey && <BalanceChart acckey = {accountKey} />}
         </div>
     );
