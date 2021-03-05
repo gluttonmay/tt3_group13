@@ -28,7 +28,6 @@ function UserInfo(props)
             setLastName(response.data.lastName);
             setNric(response.data.nric);
             setPhoneNumber(response.data.phoneNumber);
-
           });
 
     }, []);
